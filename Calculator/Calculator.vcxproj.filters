@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Bison&amp;Flex Files">
+      <UniqueIdentifier>{49467287-b59a-41f1-86a0-c95a15c675d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bison&amp;Flex Files\Header Files">
+      <UniqueIdentifier>{95d05c35-fb8c-41aa-b5fe-0892cbe960d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bison&amp;Flex Files\Source Files">
+      <UniqueIdentifier>{b2166338-f87f-439e-b288-db9fdf7bd42f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AST">
+      <UniqueIdentifier>{0e5f5678-5f51-4d1f-b271-5344599aa3ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AST\Header Files">
+      <UniqueIdentifier>{dff125f2-9e99-4e3b-9354-599bd61b2568}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AST\Source Files">
+      <UniqueIdentifier>{f68028f4-46e9-4ff3-8d52-3f35d170f755}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lex.yy.cc">
+      <Filter>Bison&amp;Flex Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="parser.tab.cc">
+      <Filter>Bison&amp;Flex Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="error.cpp">
+      <Filter>Bison&amp;Flex Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="addition.cpp">
+      <Filter>AST\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="division.cpp">
+      <Filter>AST\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="multiplication.cpp">
+      <Filter>AST\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="negation.cpp">
+      <Filter>AST\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="number.cpp">
+      <Filter>AST\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="power.cpp">
+      <Filter>AST\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="subtraction.cpp">
+      <Filter>AST\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="binaryoperation.cpp">
+      <Filter>AST\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="unaryoperation.cpp">
+      <Filter>AST\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="node.cpp">
+      <Filter>AST\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="driver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="evaluatingvisitor.cpp">
+      <Filter>AST\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="visitor.cpp">
+      <Filter>AST\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="deletingvisitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="parser.yy">
+      <Filter>Bison&amp;Flex Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="lexer.ll">
+      <Filter>Bison&amp;Flex Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="location.hh">
+      <Filter>Bison&amp;Flex Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="position.hh">
+      <Filter>Bison&amp;Flex Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stack.hh">
+      <Filter>Bison&amp;Flex Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="parser.tab.hh">
+      <Filter>Bison&amp;Flex Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="error.h">
+      <Filter>Bison&amp;Flex Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lexer.h">
+      <Filter>Bison&amp;Flex Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="visitor.h">
+      <Filter>AST\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="subtraction.h">
+      <Filter>AST\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="power.h">
+      <Filter>AST\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="number.h">
+      <Filter>AST\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="node.h">
+      <Filter>AST\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="negation.h">
+      <Filter>AST\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="multiplication.h">
+      <Filter>AST\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="division.h">
+      <Filter>AST\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="addition.h">
+      <Filter>AST\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="binaryoperation.h">
+      <Filter>AST\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="unaryoperation.h">
+      <Filter>AST\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="driver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="evaluatingvisitor.h">
+      <Filter>AST\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="deletingvisitor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
