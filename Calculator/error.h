@@ -29,8 +29,8 @@ namespace melihovv {
                 const std::string& message);
 
             /*
-            * Return error message.
-            */
+             * Return error message.
+             */
             std::string error() const;
 
         private:
