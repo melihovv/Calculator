@@ -4,10 +4,17 @@
 
 int main(int argc, char* argv[])
 {
-    std::istringstream iss("-2+2*3");
-    melihovv::calculator::Driver driver(&iss);
-    double result = driver.parse();
-    std::cout << result << std::endl;
+    while (true)
+    {
+        std::string input;
+        std::getline(std::cin, input);
+
+        std::istringstream iss(input);
+        melihovv::calculator::Driver driver(&iss);
+        double result = driver.parse();
+
+        std::cout << result << std::endl;
+    }
 
     return 0;
 }
