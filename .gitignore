@@ -190,3 +190,5 @@ ModelManifest.xml
 
 # Doxygen documentation.
 html/
+
+*.opendb
