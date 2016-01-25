@@ -9,11 +9,17 @@ int main(int argc, char* argv[])
         std::string input;
         std::getline(std::cin, input);
 
-        std::istringstream iss(input);
-        melihovv::calculator::Driver driver(&iss);
-        double result = driver.parse();
+        if (!input.empty())
+        {
+            std::istringstream iss(input);
+            melihovv::calculator::Driver driver(&iss);
 
-        std::cout << result << std::endl;
+            double result = driver.parse();
+            if (driver.getErrors().empty())
+            {
+                std::cout << result << std::endl;
+            }
+        }
     }
 
     return 0;

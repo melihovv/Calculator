@@ -9,7 +9,10 @@ melihovv::calculator::Driver::Driver(std::istream* is /*= 0*/)
 
 melihovv::calculator::Driver::~Driver()
 {
-    root->accept(delVisitor);
+    if (root != nullptr)
+    {
+        root->accept(delVisitor);
+    }
 }
 
 double melihovv::calculator::Driver::parse()
@@ -38,6 +41,11 @@ void melihovv::calculator::Driver::switchInputStream(std::istream* is)
 void melihovv::calculator::Driver::setFileName(const std::string& fileName)
 {
     this->fileName = fileName;
+}
+
+std::list<melihovv::calculator::Error> melihovv::calculator::Driver::getErrors() const
+{
+    return errors;
 }
 
 void melihovv::calculator::Driver::addError(

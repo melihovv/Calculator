@@ -53,6 +53,11 @@ namespace melihovv {
              */
             void setFileName(const std::string& fileName);
 
+            /*
+             * Return all errors.
+             */
+            std::list<Error> getErrors() const;
+
             friend class Parser;
             friend class Lexer;
 
