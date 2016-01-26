@@ -192,3 +192,10 @@ ModelManifest.xml
 html/
 
 *.opendb
+
+lex.yy.cc
+parser.tab.cc
+location.hh
+parser.tab.hh
+position.hh
+stack.hh
