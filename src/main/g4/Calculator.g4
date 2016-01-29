@@ -12,6 +12,7 @@ expr
     | expr op=('*'|'/') expr # MulDiv
     | expr op=('+'|'-') expr # AddSub
     | INT # int
+    | '-' expr # unaryMinus
     | '(' expr ')' # parens
     ;
 

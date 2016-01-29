@@ -5,6 +5,11 @@ package melihovv.calculator;
  */
 public class EvalVisitor extends CalculatorBaseVisitor<Integer> {
     @Override
+    public Integer visitUnaryMinus(CalculatorParser.UnaryMinusContext ctx) {
+        return -visit(ctx.expr());
+    }
+
+    @Override
     public Integer visitPrintExpr(CalculatorParser.PrintExprContext ctx) {
         final int value = visit(ctx.expr());
         System.out.println(value);
