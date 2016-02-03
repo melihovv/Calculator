@@ -31,8 +31,6 @@ namespace melihovv {
             class Visitor
             {
             public:
-                virtual ~Visitor() = 0;
-
                 /*!
                  * Visit number node.
                  *\param[in] number Number node.
