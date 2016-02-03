@@ -4,10 +4,18 @@
 
 int main(int argc, char* argv[])
 {
+    std::cout << "Arithmetic calculator, (c) Alexander Melihov." << std::endl;
+    std::cout << "Type 'q' to exit" << std::endl;
+
     while (true)
     {
         std::string input;
         std::getline(std::cin, input);
+
+        if (input == "q")
+        {
+            return 0;
+        }
 
         if (!input.empty())
         {
