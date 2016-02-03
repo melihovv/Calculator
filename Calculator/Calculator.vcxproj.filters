@@ -81,7 +81,7 @@
       <Filter>AST\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="deletingvisitor.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>AST\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -151,7 +151,7 @@
       <Filter>AST\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="deletingvisitor.h">
-      <Filter>Header Files</Filter>
+      <Filter>AST\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
