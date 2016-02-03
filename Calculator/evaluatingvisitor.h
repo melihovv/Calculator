@@ -48,11 +48,11 @@ namespace melihovv {
                 double getResult() const;
 
             private:
-                std::tuple<double, double> visitBinaryOperation(
+                std::tuple<int, int> visitBinaryOperation(
                     const BinaryOperation* binaryOperation
                     );
 
-                double result = 0;
+                int result = 0;
             };
         }
     }

@@ -24,12 +24,12 @@ namespace melihovv {
             class Number : public Node
             {
             public:
-                Number(double number);
+                Number(int number);
                 void accept(Visitor& visitor) const override;
-                double getNumber() const;
+                int getNumber() const;
 
             private:
-                double number;
+                int number;
             };
         }
     }
