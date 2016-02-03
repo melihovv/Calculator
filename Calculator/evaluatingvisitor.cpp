@@ -62,8 +62,8 @@ double melihovv::calculator::Ast::EvaluatingVisitor::getResult() const
 
 std::tuple<int, int>
 melihovv::calculator::Ast::EvaluatingVisitor::visitBinaryOperation(
-const BinaryOperation* binaryOperation
-)
+    const BinaryOperation* binaryOperation
+    )
 {
     binaryOperation->leftNode()->accept(*this);
     int left = result;
