@@ -19,7 +19,7 @@
 #include "error.h"
 #include "location.hh"
 #include "parser.tab.hh"
-#include "evaluatingvisitor.h"
+#include "llvmevalvisitor.h"
 #include "deletingvisitor.h"
 
 namespace melihovv
@@ -76,7 +76,7 @@ namespace melihovv
             std::string fileName_ = "";
             std::list<Error> errors_;
             const Node* root_ = nullptr;
-            EvaluatingVisitor evalVisitor_;
+            LlvmEvalVisitor llvmEvalVisitor_;
             DeletingVisitor delVisitor_;
             std::unique_ptr<Lexer> lexer_;
             std::unique_ptr<Parser> parser_;

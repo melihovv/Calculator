@@ -51,12 +51,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>d:\Files\Programs\flex\;C:\Program Files (x86)\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>d:\Files\Programs\llvm-3.7.1.src\include\;d:\Files\Programs\flex\;C:\Program Files (x86)\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMCore.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMExecutionEngine.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMInterpreter.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMMC.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMSupport.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMX86CodeGen.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMX86Desc.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMX86Info.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMRuntimeDyld.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMMCDisassembler.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMAsmPrinter.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMSelectionDAG.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMCodeGen.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMTarget.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMInstrumentation.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMScalarOpts.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMInstCombine.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMProfileData.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMObject.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMBitReader.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMMCParser.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMTransformUtils.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMipa.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMAnalysis.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMX86AsmPrinter.lib;d:\Files\Programs\llvm-3.7.1.src\build\Debug\lib\LLVMX86Utils.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Bscmake>
       <PreserveSbr>true</PreserveSbr>
@@ -86,6 +87,7 @@
     <ClCompile Include="error.cpp" />
     <ClCompile Include="evaluatingvisitor.cpp" />
     <ClCompile Include="lex.yy.cc" />
+    <ClCompile Include="llvmevalvisitor.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="parser.tab.cc" />
   </ItemGroup>
@@ -115,6 +117,7 @@
     <ClInclude Include="error.h" />
     <ClInclude Include="evaluatingvisitor.h" />
     <ClInclude Include="lexer.h" />
+    <ClInclude Include="llvmevalvisitor.h" />
     <ClInclude Include="location.hh" />
     <ClInclude Include="multiplication.h" />
     <ClInclude Include="negation.h" />
@@ -122,7 +125,6 @@
     <ClInclude Include="number.h" />
     <ClInclude Include="parser.tab.hh" />
     <ClInclude Include="position.hh" />
-    <ClInclude Include="power.h" />
     <ClInclude Include="stack.hh" />
     <ClInclude Include="subtraction.h" />
     <ClInclude Include="unaryoperation.h" />

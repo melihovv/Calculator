@@ -63,7 +63,6 @@ blank [ \t\r]
 "+" {return calculator::Parser::make_PLUS(loc);}
 "*" {return calculator::Parser::make_MULTIPLICATION(loc);}
 "/" {return calculator::Parser::make_DIVISION(loc);}
-"^" {return calculator::Parser::make_POWER(loc);}
 "(" {return calculator::Parser::make_LEFT_PAREN(loc);}
 ")" {return calculator::Parser::make_RIGHT_PAREN(loc);}
 

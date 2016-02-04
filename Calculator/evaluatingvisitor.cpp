@@ -41,13 +41,6 @@ void melihovv::calculator::EvaluatingVisitor::visit(
     result_ = std::get<0>(t) / std::get<1>(t);
 }
 
-void melihovv::calculator::EvaluatingVisitor::visit(
-    const Ast::Power* power)
-{
-    std::tuple<int, int> t = visitBinaryOperation(power);
-    result_ = pow(std::get<0>(t), std::get<1>(t));
-}
-
 int melihovv::calculator::EvaluatingVisitor::getResult() const
 {
     return result_;

@@ -19,7 +19,6 @@
 #include "subtraction.h"
 #include "multiplication.h"
 #include "division.h"
-#include "power.h"
 
 namespace melihovv
 {
@@ -40,7 +39,6 @@ namespace melihovv
             virtual void visit(const Multiplication* multiplication)
             override;
             virtual void visit(const Division* division) override;
-            virtual void visit(const Power* power) override;
 
         private:
             void visitBinaryOperation(const BinaryOperation* binOperation);

@@ -29,8 +29,9 @@ int melihovv::calculator::Driver::parse()
         return 0;
     }
 
-    root_->accept(evalVisitor_);
-    return evalVisitor_.getResult();
+    llvmEvalVisitor_.generateCode(root_);
+    llvmEvalVisitor_.printCode();
+    return llvmEvalVisitor_.runCode();
 }
 
 void melihovv::calculator::Driver::switchInputStream(std::istream* is) const

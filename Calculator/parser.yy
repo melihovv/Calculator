@@ -49,7 +49,6 @@
     #include "negation.h"
     #include "multiplication.h"
     #include "division.h"
-    #include "power.h"
 
     namespace melihovv {
         namespace calculator {
@@ -64,7 +63,6 @@
                 class Subtraction;
                 class Multiplication;
                 class Division;
-                class Power;
             }
         }
     }
@@ -99,7 +97,6 @@
     MINUS "-"
     MULTIPLICATION "*"
     DIVISION "/"
-    POWER "^"
     LEFT_PAREN "("
     RIGHT_PAREN ")"
 ;
@@ -107,7 +104,6 @@
 %left "+" "-"
 %left "*" "/"
 %precedence NEG
-%right "^"
 
 %token <double> NUMBER;
 %type <Ast::Node*> Exp;
@@ -126,7 +122,6 @@ Exp
     | Exp "*" Exp {$$ = new Ast::Multiplication($1, $3);}
     | Exp "/" Exp {$$ = new Ast::Division($1, $3);}
     | "-" Exp %prec NEG {$$ = new Ast::Negation($2);}
-    | Exp "^" Exp {$$ = new Ast::Power($1, $3);}
     | "(" Exp ")" {$$ = $2;}
     ;
 %%

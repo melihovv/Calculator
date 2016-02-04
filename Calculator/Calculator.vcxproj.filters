@@ -44,6 +44,9 @@
     <ClCompile Include="deletingvisitor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="llvmevalvisitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="parser.yy">
@@ -105,14 +108,14 @@
     <ClInclude Include="number.h">
       <Filter>AST</Filter>
     </ClInclude>
-    <ClInclude Include="power.h">
-      <Filter>AST</Filter>
-    </ClInclude>
     <ClInclude Include="subtraction.h">
       <Filter>AST</Filter>
     </ClInclude>
     <ClInclude Include="unaryoperation.h">
       <Filter>AST</Filter>
+    </ClInclude>
+    <ClInclude Include="llvmevalvisitor.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

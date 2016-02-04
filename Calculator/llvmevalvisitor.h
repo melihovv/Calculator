@@ -1,20 +1,23 @@
-/*!
- *\file evaluationvisitor.h
+﻿/*!
+ *\file llvmevalvisitor.h
  *\author Alexander Melihov <amelihovv@ya.ru>
  *\version 0.0.1
  *
  *\license This code is distributed under the very permissive MIT License but,
  * if you use it, you might consider referring to the repository.
  *
- * The file contains declaration of evaluating visitor class.
+ * The file contains declaration of llvm evaluating visitor class.
  */
 
-#ifndef EVALUATINGVISITOR_H
-#define EVALUATINGVISITOR_H
+#ifndef LLVMEVALVISITOR_H
+#define LLVMEVALVISITOR_H
 
-#include <cmath>
 #include <tuple>
+#include <llvm/IR/Value.h>
+#include "llvm/IR/IRBuilder.h"
+#include "llvm/IR/Module.h"
 #include "visitor.h"
+#include "binaryoperation.h"
 #include "number.h"
 #include "negation.h"
 #include "addition.h"
@@ -29,11 +32,13 @@ namespace melihovv
         using namespace melihovv::calculator::Ast;
 
         /*!
-         * Evaluating visitor class.
+         * Llvm evaluating visitor class.
          */
-        class EvaluatingVisitor : public Visitor
+        class LlvmEvalVisitor : public Visitor
         {
         public:
+            LlvmEvalVisitor();
+
             virtual void visit(const Number* number) override;
             virtual void visit(const Negation* negation) override;
             virtual void visit(const Addition* addition) override;
@@ -42,19 +47,20 @@ namespace melihovv
             override;
             virtual void visit(const Division* division) override;
 
-            /*!
-             * Get evaluating result_.
-             */
-            int getResult() const;
+            virtual void generateCode(const Node* node);
+            virtual void printCode();
+            virtual int runCode();
 
         private:
-            std::tuple<int, int> visitBinaryOperation(
-                const BinaryOperation* binaryOperation
-            );
+            std::tuple<llvm::Value*, llvm::Value*> visitBinaryOperation(
+                const BinaryOperation* binaryOperation);
 
-            int result_ = 0;
+            llvm::Value* value_ = nullptr;
+            llvm::Module* module_ = nullptr;
+            llvm::Function* mainFunc_ = nullptr;
+            llvm::IRBuilder<> builder_;
         };
     }
 }
 
-#endif // EVALUATINGVISITOR_H
+#endif // LLVMEVALVISITOR_H

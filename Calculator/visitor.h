@@ -25,7 +25,6 @@ namespace melihovv
             class Subtraction;
             class Multiplication;
             class Division;
-            class Power;
         }
 
         /*!
@@ -73,12 +72,6 @@ namespace melihovv
              *\param[in] division Division node.
              */
             virtual void visit(const Ast::Division* division) = 0;
-
-            /*!
-             * Visit power node.
-             *\param[in] power Power node.
-             */
-            virtual void visit(const Ast::Power* power) = 0;
         };
     }
 }

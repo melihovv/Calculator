@@ -32,11 +32,6 @@ void melihovv::calculator::DeletingVisitor::visit(const Ast::Division* division)
     visitBinaryOperation(division);
 }
 
-void melihovv::calculator::DeletingVisitor::visit(const Ast::Power* power)
-{
-    visitBinaryOperation(power);
-}
-
 void melihovv::calculator::DeletingVisitor::visitBinaryOperation(
     const Ast::BinaryOperation* binOperation)
 {
