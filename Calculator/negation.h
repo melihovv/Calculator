@@ -14,18 +14,27 @@
 
 #include "unaryoperation.h"
 
-namespace melihovv {
-    namespace calculator {
-        namespace Ast {
-
+namespace melihovv
+{
+    namespace calculator
+    {
+        namespace Ast
+        {
             /*!
              * Negation node class.
              */
             class Negation : public UnaryOperation
             {
             public:
-                Negation(const Node* child);
-                void accept(Visitor& visitor) const override;
+                Negation(const Node* child)
+                    : UnaryOperation(child)
+                {
+                }
+
+                void accept(Visitor& visitor) const override
+                {
+                    visitor.visit(this);
+                }
             };
         }
     }

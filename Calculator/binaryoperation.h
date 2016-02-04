@@ -14,10 +14,12 @@
 
 #include "node.h"
 
-namespace melihovv {
-    namespace calculator {
-        namespace Ast {
-
+namespace melihovv
+{
+    namespace calculator
+    {
+        namespace Ast
+        {
             /*!
              * Abstract binary operation class.
              */
@@ -29,22 +31,35 @@ namespace melihovv {
                  *\param[in] left Left child.
                  *\param[in] right Right child.
                  */
-                BinaryOperation(const Node* left, const Node* right);
-                virtual ~BinaryOperation() = 0;
+                BinaryOperation(const Node* left, const Node* right)
+                {
+                    left_ = left;
+                    right_ = right;
+                }
+
+                virtual ~BinaryOperation()
+                {
+                }
 
                 /*!
                  * Get left child.
                  */
-                const Node* leftNode() const;
+                const Node* left() const
+                {
+                    return left_;
+                }
 
                 /*!
                  * Get right child.
                  */
-                const Node* rightNode() const;
+                const Node* right() const
+                {
+                    return right_;
+                }
 
             private:
-                const Node* left;
-                const Node* right;
+                const Node* left_;
+                const Node* right_;
             };
         }
     }

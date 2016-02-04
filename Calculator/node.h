@@ -14,17 +14,21 @@
 
 #include "visitor.h"
 
-namespace melihovv {
-    namespace calculator {
-        namespace Ast {
-
+namespace melihovv
+{
+    namespace calculator
+    {
+        namespace Ast
+        {
             /*!
              * Node class.
              */
             class Node
             {
             public:
-                virtual ~Node() = 0;
+                virtual ~Node()
+                {
+                }
 
                 /*!
                  * Accept visitor.

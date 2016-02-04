@@ -12,10 +12,12 @@
 #ifndef VISITOR_H
 #define VISITOR_H
 
-namespace melihovv {
-    namespace calculator {
-        namespace Ast {
-
+namespace melihovv
+{
+    namespace calculator
+    {
+        namespace Ast
+        {
             class Node;
             class Number;
             class Negation;

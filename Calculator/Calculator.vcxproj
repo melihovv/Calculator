@@ -81,24 +81,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="addition.cpp" />
-    <ClCompile Include="binaryoperation.cpp" />
     <ClCompile Include="deletingvisitor.cpp" />
     <ClCompile Include="driver.cpp" />
-    <ClCompile Include="division.cpp" />
     <ClCompile Include="error.cpp" />
     <ClCompile Include="evaluatingvisitor.cpp" />
     <ClCompile Include="lex.yy.cc" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="multiplication.cpp" />
-    <ClCompile Include="negation.cpp" />
-    <ClCompile Include="node.cpp" />
-    <ClCompile Include="number.cpp" />
     <ClCompile Include="parser.tab.cc" />
-    <ClCompile Include="power.cpp" />
-    <ClCompile Include="subtraction.cpp" />
-    <ClCompile Include="unaryoperation.cpp" />
-    <ClCompile Include="visitor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="lexer.ll">

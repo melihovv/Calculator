@@ -14,22 +14,35 @@
 
 #include "node.h"
 
-namespace melihovv {
-    namespace calculator {
-        namespace Ast {
-
+namespace melihovv
+{
+    namespace calculator
+    {
+        namespace Ast
+        {
             /*!
              * Number node class.
              */
             class Number : public Node
             {
             public:
-                Number(int number);
-                void accept(Visitor& visitor) const override;
-                int getNumber() const;
+                Number(int number)
+                {
+                    number_ = number;
+                }
+
+                void accept(Visitor& visitor) const override
+                {
+                    visitor.visit(this);
+                }
+
+                int number() const
+                {
+                    return number_;
+                }
 
             private:
-                int number;
+                int number_;
             };
         }
     }

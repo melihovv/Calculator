@@ -21,10 +21,12 @@
 #include "division.h"
 #include "power.h"
 
-namespace melihovv {
-    namespace calculator {
-        namespace Ast {
-
+namespace melihovv
+{
+    namespace calculator
+    {
+        namespace Ast
+        {
             /*!
              * Deleting visitor class.
              */
@@ -36,14 +38,14 @@ namespace melihovv {
                 virtual void visit(const Addition* addition) override;
                 virtual void visit(const Subtraction* subtraction) override;
                 virtual void visit(const Multiplication* multiplication)
-                    override;
+                override;
                 virtual void visit(const Division* division) override;
                 virtual void visit(const Power* power) override;
 
             private:
                 void visitBinaryOperation(const BinaryOperation* binOperation);
                 void visitUnaryOperation(const UnaryOperation* unaryOperation);
-                void visitNode(const Node* node);
+                static void visitNode(const Node* node);
             };
         }
     }

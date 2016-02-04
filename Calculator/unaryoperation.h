@@ -14,10 +14,12 @@
 
 #include "node.h"
 
-namespace melihovv {
-    namespace calculator {
-        namespace Ast {
-
+namespace melihovv
+{
+    namespace calculator
+    {
+        namespace Ast
+        {
             /*!
              * Abstract unary operation class.
              */
@@ -28,16 +30,25 @@ namespace melihovv {
                  * Construct binary operation.
                  *\param[in] child Child.
                  */
-                UnaryOperation(const Node* child);
-                virtual ~UnaryOperation() = 0;
+                explicit UnaryOperation(const Node* child)
+                {
+                    child_ = child;
+                }
+
+                virtual ~UnaryOperation()
+                {
+                }
 
                 /*!
                  * Get child.
                  */
-                const Node* child() const;
+                const Node* child() const
+                {
+                    return child_;
+                }
 
             private:
-                const Node* _child;
+                const Node* child_;
             };
         }
     }

@@ -14,18 +14,27 @@
 
 #include "binaryoperation.h"
 
-namespace melihovv {
-    namespace calculator {
-        namespace Ast {
-
+namespace melihovv
+{
+    namespace calculator
+    {
+        namespace Ast
+        {
             /*!
              * Multiplication node class.
              */
             class Multiplication : public BinaryOperation
             {
             public:
-                Multiplication(const Node* left, const Node* right);
-                void accept(Visitor& visitor) const override;
+                Multiplication(const Node* left, const Node* right)
+                    : BinaryOperation(left, right)
+                {
+                }
+
+                void accept(Visitor& visitor) const override
+                {
+                    visitor.visit(this);
+                }
             };
         }
     }

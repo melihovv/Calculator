@@ -16,15 +16,13 @@ void melihovv::calculator::Ast::DeletingVisitor::visit(const Addition* addition)
 }
 
 void melihovv::calculator::Ast::DeletingVisitor::visit(
-    const Subtraction* subtraction
-    )
+    const Subtraction* subtraction)
 {
     visitBinaryOperation(subtraction);
 }
 
 void melihovv::calculator::Ast::DeletingVisitor::visit(
-    const Multiplication* multiplication
-    )
+    const Multiplication* multiplication)
 {
     visitBinaryOperation(multiplication);
 }
@@ -40,17 +38,15 @@ void melihovv::calculator::Ast::DeletingVisitor::visit(const Power* power)
 }
 
 void melihovv::calculator::Ast::DeletingVisitor::visitBinaryOperation(
-    const BinaryOperation* binOperation
-    )
+    const BinaryOperation* binOperation)
 {
-    binOperation->leftNode()->accept(*this);
-    binOperation->rightNode()->accept(*this);
+    binOperation->left()->accept(*this);
+    binOperation->right()->accept(*this);
     visitNode(binOperation);
 }
 
 void melihovv::calculator::Ast::DeletingVisitor::visitUnaryOperation(
-    const UnaryOperation* unaryOperation
-    )
+    const UnaryOperation* unaryOperation)
 {
     unaryOperation->child()->accept(*this);
     visitNode(unaryOperation);

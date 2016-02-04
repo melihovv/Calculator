@@ -23,10 +23,12 @@
 #include "division.h"
 #include "power.h"
 
-namespace melihovv {
-    namespace calculator {
-        namespace Ast {
-
+namespace melihovv
+{
+    namespace calculator
+    {
+        namespace Ast
+        {
             /*!
              * Evaluating visitor class.
              */
@@ -38,21 +40,21 @@ namespace melihovv {
                 virtual void visit(const Addition* addition) override;
                 virtual void visit(const Subtraction* subtraction) override;
                 virtual void visit(const Multiplication* multiplication)
-                    override;
+                override;
                 virtual void visit(const Division* division) override;
                 virtual void visit(const Power* power) override;
 
                 /*!
-                 * Get evaluating result.
+                 * Get evaluating result_.
                  */
-                double getResult() const;
+                int getResult() const;
 
             private:
                 std::tuple<int, int> visitBinaryOperation(
                     const BinaryOperation* binaryOperation
-                    );
+                );
 
-                int result = 0;
+                int result_ = 0;
             };
         }
     }

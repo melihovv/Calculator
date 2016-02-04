@@ -1,73 +1,65 @@
 #include "evaluatingvisitor.h"
 
 void melihovv::calculator::Ast::EvaluatingVisitor::visit(
-    const Number* number
-    )
+    const Number* number)
 {
-    result = number->getNumber();
+    result_ = number->number();
 }
 
 void melihovv::calculator::Ast::EvaluatingVisitor::visit(
-    const Negation* negation
-    )
+    const Negation* negation)
 {
     negation->child()->accept(*this);
-    result *= -1;
+    result_ *= -1;
 }
 
 void melihovv::calculator::Ast::EvaluatingVisitor::visit(
-    const Addition* addition
-    )
+    const Addition* addition)
 {
     std::tuple<int, int> t = visitBinaryOperation(addition);
-    result = std::get<0>(t) + std::get<1>(t);
+    result_ = std::get<0>(t) + std::get<1>(t);
 }
 
 void melihovv::calculator::Ast::EvaluatingVisitor::visit(
-    const Subtraction* subtraction
-    )
+    const Subtraction* subtraction)
 {
     std::tuple<int, int> t = visitBinaryOperation(subtraction);
-    result = std::get<0>(t) - std::get<1>(t);
+    result_ = std::get<0>(t) - std::get<1>(t);
 }
 
 void melihovv::calculator::Ast::EvaluatingVisitor::visit(
-    const Multiplication* multiplication
-    )
+    const Multiplication* multiplication)
 {
     std::tuple<int, int> t = visitBinaryOperation(multiplication);
-    result = std::get<0>(t) * std::get<1>(t);
+    result_ = std::get<0>(t) * std::get<1>(t);
 }
 
 void melihovv::calculator::Ast::EvaluatingVisitor::visit(
-    const Division* division
-    )
+    const Division* division)
 {
     std::tuple<int, int> t = visitBinaryOperation(division);
-    result = std::get<0>(t) / std::get<1>(t);
+    result_ = std::get<0>(t) / std::get<1>(t);
 }
 
 void melihovv::calculator::Ast::EvaluatingVisitor::visit(
-    const Power* power
-    )
+    const Power* power)
 {
     std::tuple<int, int> t = visitBinaryOperation(power);
-    result = pow(std::get<0>(t), std::get<1>(t));
+    result_ = pow(std::get<0>(t), std::get<1>(t));
 }
 
-double melihovv::calculator::Ast::EvaluatingVisitor::getResult() const
+int melihovv::calculator::Ast::EvaluatingVisitor::getResult() const
 {
-    return result;
+    return result_;
 }
 
 std::tuple<int, int>
 melihovv::calculator::Ast::EvaluatingVisitor::visitBinaryOperation(
-    const BinaryOperation* binaryOperation
-    )
+    const BinaryOperation* binaryOperation)
 {
-    binaryOperation->leftNode()->accept(*this);
-    int left = result;
-    binaryOperation->rightNode()->accept(*this);
-    int right = result;
+    binaryOperation->left()->accept(*this);
+    int left = result_;
+    binaryOperation->right()->accept(*this);
+    int right = result_;
     return std::make_tuple(left, right);
 }

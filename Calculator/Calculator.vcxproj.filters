@@ -21,12 +21,6 @@
     <Filter Include="AST">
       <UniqueIdentifier>{0e5f5678-5f51-4d1f-b271-5344599aa3ef}</UniqueIdentifier>
     </Filter>
-    <Filter Include="AST\Header Files">
-      <UniqueIdentifier>{dff125f2-9e99-4e3b-9354-599bd61b2568}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="AST\Source Files">
-      <UniqueIdentifier>{f68028f4-46e9-4ff3-8d52-3f35d170f755}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -41,47 +35,14 @@
     <ClCompile Include="error.cpp">
       <Filter>Bison&amp;Flex Files\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="addition.cpp">
-      <Filter>AST\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="division.cpp">
-      <Filter>AST\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="multiplication.cpp">
-      <Filter>AST\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="negation.cpp">
-      <Filter>AST\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="number.cpp">
-      <Filter>AST\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="power.cpp">
-      <Filter>AST\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="subtraction.cpp">
-      <Filter>AST\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="binaryoperation.cpp">
-      <Filter>AST\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="unaryoperation.cpp">
-      <Filter>AST\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="node.cpp">
-      <Filter>AST\Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="driver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="evaluatingvisitor.cpp">
-      <Filter>AST\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="visitor.cpp">
-      <Filter>AST\Source Files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="deletingvisitor.cpp">
-      <Filter>AST\Source Files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -111,47 +72,47 @@
     <ClInclude Include="lexer.h">
       <Filter>Bison&amp;Flex Files\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="visitor.h">
-      <Filter>AST\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="subtraction.h">
-      <Filter>AST\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="power.h">
-      <Filter>AST\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="number.h">
-      <Filter>AST\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="node.h">
-      <Filter>AST\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="negation.h">
-      <Filter>AST\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="multiplication.h">
-      <Filter>AST\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="division.h">
-      <Filter>AST\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="addition.h">
-      <Filter>AST\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="binaryoperation.h">
-      <Filter>AST\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="unaryoperation.h">
-      <Filter>AST\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="driver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="evaluatingvisitor.h">
-      <Filter>AST\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="deletingvisitor.h">
-      <Filter>AST\Header Files</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="evaluatingvisitor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="visitor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="addition.h">
+      <Filter>AST</Filter>
+    </ClInclude>
+    <ClInclude Include="binaryoperation.h">
+      <Filter>AST</Filter>
+    </ClInclude>
+    <ClInclude Include="division.h">
+      <Filter>AST</Filter>
+    </ClInclude>
+    <ClInclude Include="multiplication.h">
+      <Filter>AST</Filter>
+    </ClInclude>
+    <ClInclude Include="negation.h">
+      <Filter>AST</Filter>
+    </ClInclude>
+    <ClInclude Include="node.h">
+      <Filter>AST</Filter>
+    </ClInclude>
+    <ClInclude Include="number.h">
+      <Filter>AST</Filter>
+    </ClInclude>
+    <ClInclude Include="power.h">
+      <Filter>AST</Filter>
+    </ClInclude>
+    <ClInclude Include="subtraction.h">
+      <Filter>AST</Filter>
+    </ClInclude>
+    <ClInclude Include="unaryoperation.h">
+      <Filter>AST</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

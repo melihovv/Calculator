@@ -79,23 +79,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Calculator\addition.cpp" />
-    <ClCompile Include="..\Calculator\binaryoperation.cpp" />
     <ClCompile Include="..\Calculator\deletingvisitor.cpp" />
-    <ClCompile Include="..\Calculator\division.cpp" />
     <ClCompile Include="..\Calculator\driver.cpp" />
     <ClCompile Include="..\Calculator\error.cpp" />
     <ClCompile Include="..\Calculator\evaluatingvisitor.cpp" />
     <ClCompile Include="..\Calculator\lex.yy.cc" />
-    <ClCompile Include="..\Calculator\multiplication.cpp" />
-    <ClCompile Include="..\Calculator\negation.cpp" />
-    <ClCompile Include="..\Calculator\node.cpp" />
-    <ClCompile Include="..\Calculator\number.cpp" />
     <ClCompile Include="..\Calculator\parser.tab.cc" />
-    <ClCompile Include="..\Calculator\power.cpp" />
-    <ClCompile Include="..\Calculator\subtraction.cpp" />
-    <ClCompile Include="..\Calculator\unaryoperation.cpp" />
-    <ClCompile Include="..\Calculator\visitor.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="testcalculator.cpp" />
   </ItemGroup>
