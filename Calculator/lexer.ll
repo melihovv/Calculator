@@ -55,7 +55,7 @@ blank [ \t\r]
 
 %{
     /*! Tokens' location. */
-    static melihovv::calculator::Parser::location_type loc(&driver.fileName);
+    static melihovv::calculator::Parser::location_type loc(&driver.fileName_);
     loc.step();
 %}
 
@@ -80,7 +80,7 @@ blank [ \t\r]
 }
 
 <<EOF>> {
-    loc.initialize(&driver.fileName);
+    loc.initialize(&driver.fileName_);
     return calculator::Parser::make_END(loc);
 }
 

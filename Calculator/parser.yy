@@ -28,7 +28,7 @@
 %locations
 %initial-action
 {
-    @$.begin.filename = @$.end.filename = &driver.fileName;
+    @$.begin.filename = @$.end.filename = &driver.fileName_;
 };
 
 %define api.namespace {melihovv::calculator}
@@ -116,7 +116,7 @@
 
 %%
 Input
-    : Exp {driver.root = $1;}
+    : Exp {driver.root_ = $1;}
     ;
 
 Exp

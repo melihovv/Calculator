@@ -22,8 +22,8 @@ int main(int argc, char* argv[])
             std::istringstream iss(input);
             melihovv::calculator::Driver driver(&iss);
 
-            double result = driver.parse();
-            if (driver.getErrors().empty())
+            int result = driver.parse();
+            if (driver.errors().empty())
             {
                 std::cout << result << std::endl;
             }

@@ -22,30 +22,31 @@
 #include "evaluatingvisitor.h"
 #include "deletingvisitor.h"
 
-namespace melihovv {
-    namespace calculator {
-
+namespace melihovv
+{
+    namespace calculator
+    {
         /*!
          * Driver class.
          */
         class Driver
         {
         public:
-            Driver(std::istream* is = 0);
+            Driver(std::istream* is = nullptr);
             ~Driver();
 
             /*!
              * Parse input and return result.
              *\return Result of arithmetic expression.
              */
-            double parse();
+            int parse();
 
             /*!
              * Switch lexer input stream. Default is standard input
              * (std::cin).
              *\param[in] is Input stream.
              */
-            void switchInputStream(std::istream* is);
+            void switchInputStream(std::istream* is) const;
 
             /*!
              * Set name of parsing file.
@@ -56,7 +57,7 @@ namespace melihovv {
             /*
              * Return all errors.
              */
-            std::list<Error> getErrors() const;
+            std::list<Error> errors() const;
 
             friend class Parser;
             friend class Lexer;
@@ -70,15 +71,15 @@ namespace melihovv {
             void addError(
                 const location& location,
                 const std::string& message
-                );
+            );
 
-            std::string fileName = "";
-            std::list<Error> errors;
-            const Node* root = nullptr;
-            EvaluatingVisitor evalVisitor;
-            DeletingVisitor delVisitor;
-            std::unique_ptr<Lexer> lexer;
-            std::unique_ptr<Parser> parser;
+            std::string fileName_ = "";
+            std::list<Error> errors_;
+            const Node* root_ = nullptr;
+            EvaluatingVisitor evalVisitor_;
+            DeletingVisitor delVisitor_;
+            std::unique_ptr<Lexer> lexer_;
+            std::unique_ptr<Parser> parser_;
         };
     }
 }

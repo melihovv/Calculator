@@ -1,57 +1,57 @@
 #include "driver.h"
 #include "lexer.h"
 
-melihovv::calculator::Driver::Driver(std::istream* is /*= 0*/)
+melihovv::calculator::Driver::Driver(std::istream* is /*= nullptr*/)
 {
-    lexer = std::unique_ptr<Lexer>(new Lexer(is));
-    parser = std::unique_ptr<Parser>(new Parser(*lexer.get(), *this));
+    lexer_ = std::make_unique<Lexer>(is);
+    parser_ = std::make_unique<Parser>(*lexer_.get(), *this);
 }
 
 melihovv::calculator::Driver::~Driver()
 {
-    if (root != nullptr)
+    if (root_ != nullptr)
     {
-        root->accept(delVisitor);
+        root_->accept(delVisitor_);
     }
 }
 
-double melihovv::calculator::Driver::parse()
+int melihovv::calculator::Driver::parse()
 {
-    errors.clear();
-    parser->parse();
+    errors_.clear();
+    parser_->parse();
 
-    if (errors.size() != 0)
+    if (errors_.size() != 0)
     {
-        for (auto error : errors)
+        for (auto error : errors_)
         {
             std::cout << error.error() << std::endl;
         }
         return 0;
     }
 
-    root->accept(evalVisitor);
-    return evalVisitor.getResult();
+    root_->accept(evalVisitor_);
+    return evalVisitor_.getResult();
 }
 
-void melihovv::calculator::Driver::switchInputStream(std::istream* is)
+void melihovv::calculator::Driver::switchInputStream(std::istream* is) const
 {
-    lexer->switch_streams(is);
+    lexer_->switch_streams(is);
 }
 
 void melihovv::calculator::Driver::setFileName(const std::string& fileName)
 {
-    this->fileName = fileName;
+    fileName_ = fileName;
 }
 
-std::list<melihovv::calculator::Error> melihovv::calculator::Driver::getErrors() const
+std::list<melihovv::calculator::Error>
+melihovv::calculator::Driver::errors() const
 {
-    return errors;
+    return errors_;
 }
 
 void melihovv::calculator::Driver::addError(
     const location& location,
-    const std::string& message
-    )
+    const std::string& message)
 {
-    errors.push_back(Error(location, message));
+    errors_.push_back(Error(location, message));
 }
