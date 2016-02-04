@@ -74,9 +74,9 @@ namespace melihovv {
 
             std::string fileName = "";
             std::list<Error> errors;
-            const Ast::Node* root = nullptr;
-            Ast::EvaluatingVisitor evalVisitor;
-            Ast::DeletingVisitor delVisitor;
+            const Node* root = nullptr;
+            EvaluatingVisitor evalVisitor;
+            DeletingVisitor delVisitor;
             std::unique_ptr<Lexer> lexer;
             std::unique_ptr<Parser> parser;
         };

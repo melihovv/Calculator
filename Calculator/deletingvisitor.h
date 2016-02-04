@@ -25,29 +25,28 @@ namespace melihovv
 {
     namespace calculator
     {
-        namespace Ast
-        {
-            /*!
-             * Deleting visitor class.
-             */
-            class DeletingVisitor : public Visitor
-            {
-            public:
-                virtual void visit(const Number* number) override;
-                virtual void visit(const Negation* negation) override;
-                virtual void visit(const Addition* addition) override;
-                virtual void visit(const Subtraction* subtraction) override;
-                virtual void visit(const Multiplication* multiplication)
-                override;
-                virtual void visit(const Division* division) override;
-                virtual void visit(const Power* power) override;
+        using namespace melihovv::calculator::Ast;
 
-            private:
-                void visitBinaryOperation(const BinaryOperation* binOperation);
-                void visitUnaryOperation(const UnaryOperation* unaryOperation);
-                static void visitNode(const Node* node);
-            };
-        }
+        /*!
+         * Deleting visitor class.
+         */
+        class DeletingVisitor : public Visitor
+        {
+        public:
+            virtual void visit(const Number* number) override;
+            virtual void visit(const Negation* negation) override;
+            virtual void visit(const Addition* addition) override;
+            virtual void visit(const Subtraction* subtraction) override;
+            virtual void visit(const Multiplication* multiplication)
+            override;
+            virtual void visit(const Division* division) override;
+            virtual void visit(const Power* power) override;
+
+        private:
+            void visitBinaryOperation(const BinaryOperation* binOperation);
+            void visitUnaryOperation(const UnaryOperation* unaryOperation);
+            static void visitNode(const Node* node);
+        };
     }
 }
 

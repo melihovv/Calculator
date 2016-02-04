@@ -27,36 +27,35 @@ namespace melihovv
 {
     namespace calculator
     {
-        namespace Ast
+        using namespace melihovv::calculator::Ast;
+
+        /*!
+         * Evaluating visitor class.
+         */
+        class EvaluatingVisitor : public Visitor
         {
+        public:
+            virtual void visit(const Number* number) override;
+            virtual void visit(const Negation* negation) override;
+            virtual void visit(const Addition* addition) override;
+            virtual void visit(const Subtraction* subtraction) override;
+            virtual void visit(const Multiplication* multiplication)
+            override;
+            virtual void visit(const Division* division) override;
+            virtual void visit(const Power* power) override;
+
             /*!
-             * Evaluating visitor class.
+             * Get evaluating result_.
              */
-            class EvaluatingVisitor : public Visitor
-            {
-            public:
-                virtual void visit(const Number* number) override;
-                virtual void visit(const Negation* negation) override;
-                virtual void visit(const Addition* addition) override;
-                virtual void visit(const Subtraction* subtraction) override;
-                virtual void visit(const Multiplication* multiplication)
-                override;
-                virtual void visit(const Division* division) override;
-                virtual void visit(const Power* power) override;
+            int getResult() const;
 
-                /*!
-                 * Get evaluating result_.
-                 */
-                int getResult() const;
+        private:
+            std::tuple<int, int> visitBinaryOperation(
+                const BinaryOperation* binaryOperation
+            );
 
-            private:
-                std::tuple<int, int> visitBinaryOperation(
-                    const BinaryOperation* binaryOperation
-                );
-
-                int result_ = 0;
-            };
-        }
+            int result_ = 0;
+        };
     }
 }
 

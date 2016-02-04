@@ -1,58 +1,58 @@
 #include "deletingvisitor.h"
 
-void melihovv::calculator::Ast::DeletingVisitor::visit(const Number* number)
+void melihovv::calculator::DeletingVisitor::visit(const Ast::Number* number)
 {
     visitNode(number);
 }
 
-void melihovv::calculator::Ast::DeletingVisitor::visit(const Negation* negation)
+void melihovv::calculator::DeletingVisitor::visit(const Ast::Negation* negation)
 {
     visitUnaryOperation(negation);
 }
 
-void melihovv::calculator::Ast::DeletingVisitor::visit(const Addition* addition)
+void melihovv::calculator::DeletingVisitor::visit(const Ast::Addition* addition)
 {
     visitBinaryOperation(addition);
 }
 
-void melihovv::calculator::Ast::DeletingVisitor::visit(
-    const Subtraction* subtraction)
+void melihovv::calculator::DeletingVisitor::visit(
+    const Ast::Subtraction* subtraction)
 {
     visitBinaryOperation(subtraction);
 }
 
-void melihovv::calculator::Ast::DeletingVisitor::visit(
-    const Multiplication* multiplication)
+void melihovv::calculator::DeletingVisitor::visit(
+    const Ast::Multiplication* multiplication)
 {
     visitBinaryOperation(multiplication);
 }
 
-void melihovv::calculator::Ast::DeletingVisitor::visit(const Division* division)
+void melihovv::calculator::DeletingVisitor::visit(const Ast::Division* division)
 {
     visitBinaryOperation(division);
 }
 
-void melihovv::calculator::Ast::DeletingVisitor::visit(const Power* power)
+void melihovv::calculator::DeletingVisitor::visit(const Ast::Power* power)
 {
     visitBinaryOperation(power);
 }
 
-void melihovv::calculator::Ast::DeletingVisitor::visitBinaryOperation(
-    const BinaryOperation* binOperation)
+void melihovv::calculator::DeletingVisitor::visitBinaryOperation(
+    const Ast::BinaryOperation* binOperation)
 {
     binOperation->left()->accept(*this);
     binOperation->right()->accept(*this);
     visitNode(binOperation);
 }
 
-void melihovv::calculator::Ast::DeletingVisitor::visitUnaryOperation(
-    const UnaryOperation* unaryOperation)
+void melihovv::calculator::DeletingVisitor::visitUnaryOperation(
+    const Ast::UnaryOperation* unaryOperation)
 {
     unaryOperation->child()->accept(*this);
     visitNode(unaryOperation);
 }
 
-void melihovv::calculator::Ast::DeletingVisitor::visitNode(const Node* node)
+void melihovv::calculator::DeletingVisitor::visitNode(const Ast::Node* node)
 {
     delete node;
     node = nullptr;
