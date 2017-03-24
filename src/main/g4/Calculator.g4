@@ -25,4 +25,4 @@ SUB : '-';
 
 INT: [1-9][0-9]*;
 NEWLINE: '\r'? '\n';
-WS: [ \r\v\t]+ -> skip;
+WS: [\r\n\f\t\u000B]+ -> skip;
